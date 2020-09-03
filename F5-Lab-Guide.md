@@ -28,7 +28,7 @@ ___
 
 - [**Section 1**](#section-1-automating-machine-identities-with-big-ip) - Automating Machine Identities with BIG-IP
 - [**Section 2**](#section-2-transitioning-from-big-ip-to-big-iq) - Transitioning from BIG-IP to BIG-IQ
-- [**Section 3**](#section-3-deploying-a-new-application-using-big-iq-&venafi) - Deploying a new application using BIG-IQ & Venafi
+- [**Section 3**](#section-3-deploying-a-new-application-using-big-iq-and-venafi) - Deploying a new application using BIG-IQ & Venafi
 
 ## **Lab Steps**
 
@@ -334,7 +334,7 @@ This use case outlines the steps necessary to introduce BIG-IQ to an existing en
 
 12. Navigate back to https://ecocsystemapp.venafidemo.com and inspect the certificate. The virtual server should now be using the latest certificate that was requested via BIG-IQ. 
 
-### Section 3: Deploying a new application using BIG-IQ & Venafi
+### Section 3: Deploying a new application using BIG-IQ and Venafi
 
 This use case outlines the steps necessary to request a new certificate from BIG-IQ, and create a new SSL Profile. There are a lot fewer steps in this section because this demonstrates a net new application. There is nothing to migrate. In this example, like the last, BIG-IQ is authoritative over the certificate lifecycle and all provisioning tasks originate from BIG-IQ, rather than Trust Protection Platform.
 
