@@ -28,7 +28,7 @@ ___
 
 - [**Section 1**](#section-1-automating-machine-identities-with-big-ip) - Automating Machine Identities with BIG-IP
 - [**Section 2**](#section-2-transitioning-from-big-ip-to-big-iq) - Transitioning from BIG-IP to BIG-IQ
-- [**Section 3**](#section-3-deploying-a-new-application-using-big-iq-&-venafi) - Deploying a new application using BIG-IQ & Venafi
+- [**Section 3**](#section-3-deploying-a-new-application-using-big-iq-&venafi) - Deploying a new application using BIG-IQ & Venafi
 
 ## **Lab Steps**
 
