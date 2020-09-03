@@ -19,3 +19,5 @@ At this point, you're probably wondering which integration makes sense for your 
 ### **Accessing the Lab Environment**
 
 You should have received lab access directly from the CloudShare platform. The lab environment will be valid for two weeks and will automatically be shut down after that time. If you require additional lab time, please reach out to paul.cleary@venafi.com.
+
+Proceed to the [Lab](F5-Lab-Guide.md) to get started.
