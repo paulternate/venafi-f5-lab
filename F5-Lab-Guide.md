@@ -38,9 +38,12 @@ The BIG-IQ virtual machine sometimes has issues when resuming from a suspended s
 
 1. Click **View VM** on *BIG-IQ.*
 2. Click inside the black window and press `Enter` on the keyboard to wake up the CLI.
-3. Restart BIG-IQ by typing the following command and waiting for services to come back (about 5 minutes):
+3. Restart BIG-IQ by typing the following command and waiting for services to come back (about 5 minutes). If you are required to login, please use the following credentials:
 
     ```bash
+    login: root
+    password: VenP@ss123!
+    -----------
     reboot now
     ```
 
