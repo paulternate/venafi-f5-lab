@@ -346,10 +346,10 @@ This use case outlines the steps necessary to request a new certificate from BIG
 2. Click **Create** and fill in the details for the new certificate. You'll notice that the certificate policy for this folder is a little more relaxed due to the configurations we made in Section 2. You can choose to enter your city & state, or simply leave the fields blank.
 
     ```json
-    "Name": "ecosystemapp.venafidemo.com"
+    "Name": "internalapp.venafidemo.com"
     "Issuer": "TPP"
     "Policy Folder": "Internal App"
-    "Common Name": "ecosystemapp.venafidemo.com"
+    "Common Name": "internalapp.venafidemo.com"
     "Password": "VenafiPassword123!"
     "Confirm Password": "VenafiPassword123!"
 
