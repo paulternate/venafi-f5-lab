@@ -1,0 +1,705 @@
+<!DOCTYPE html><html><head>
+      <title>F5-Lab-Guide</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\paulm\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.3\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="the-lab-environment"><strong>The Lab Environment</strong></h1>
+
+<p>This Venafi Trust Protection Platform lab environment contains the following virtual machines that have been pre-configured with the proper networking and settings. The environment includes:</p>
+<ul>
+<li><strong>1x Trust Protection Platform Server (TPP 20.1)</strong>
+<ul>
+<li>Microsoft Certification Authority (venafidemo-TPP-CA)</li>
+<li>Active Directory Domain Services (<a href="http://venafidemo.com">venafidemo.com</a>)</li>
+<li>DNS (<a href="http://venafidemo.com">venafidemo.com</a>)</li>
+<li>IIS Server (for Venafi GUIs)</li>
+<li>MS SQL Express 2016</li>
+</ul>
+</li>
+<li><strong>1x CentOS Server (Apache)</strong>
+<ul>
+<li>Minimal Install</li>
+<li>Apache Web Server</li>
+</ul>
+</li>
+<li><strong>1x F5 BIG-IP Server (BIG-IP)</strong></li>
+<li><strong>1x F5 BIG-IQ Server (BIG-IQ)</strong></li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th>VM</th>
+<th>Internal IP</th>
+<th>Internal DNS</th>
+<th>CLI Username</th>
+<th>CLI Password</th>
+<th>GUI Username</th>
+<th>GUI Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BIG-IQ</td>
+<td>192.168.1.200</td>
+<td><a href="http://bigiq.venafidemo.com">bigiq.venafidemo.com</a></td>
+<td>root</td>
+<td>VenP@ss123!</td>
+<td>admin</td>
+<td>VenP@ss123!</td>
+</tr>
+<tr>
+<td>BIG-IP</td>
+<td>192.168.1.201</td>
+<td><a href="http://bigip1.venafidemo.com">bigip1.venafidemo.com</a></td>
+<td>root</td>
+<td>VenP@ss</td>
+<td>admin</td>
+<td>VenP@ss</td>
+</tr>
+<tr>
+<td>TPP Server</td>
+<td>192.168.1.100</td>
+<td><a href="http://tpp.venafidemo.com">tpp.venafidemo.com</a></td>
+<td>N/A</td>
+<td>N/A</td>
+<td>VENAFIDEMO\venafi_svc</td>
+<td>5&amp;Njgx8IGyHQ</td>
+</tr>
+<tr>
+<td>Venafi Platform</td>
+<td>192.168.1.100</td>
+<td><a href="http://tpp.venafidemo.com">tpp.venafidemo.com</a></td>
+<td>N/A</td>
+<td>N/A</td>
+<td>tppadmin</td>
+<td>Passw0rd123!</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 class="mume-header" id="about-this-lab"><strong>About This Lab</strong></h2>
+
+<p>This lab walks end users through the process of configuring Venafi Trust Protection Platform and F5&apos;s BIG-IP and BIG-IQ devices to completely automate machine identities in use throughout an organizations F5 infrastructure.</p>
+<ul>
+<li><a href="#section-1-automating-machine-identities-with-big-ip"><strong>Section 1</strong></a> - Automating Machine Identities with BIG-IP</li>
+<li><a href="#section-2-transitioning-from-big-ip-to-big-iq"><strong>Section 2</strong></a> - Transitioning from BIG-IP to BIG-IQ</li>
+<li><a href="#section-3-deploying-a-new-application-using-big-iq-&amp;-venafi"><strong>Section 3</strong></a> - Deploying a new application using BIG-IQ &amp; Venafi</li>
+</ul>
+<h3 class="mume-header" id="background"><strong>Background</strong></h3>
+
+<p>Issuing a machine identity today, in many organizations, can take DAYS and is often a very manual process involving change requests, tickets and lots of hands on keyboards. Naturally, that can create bottlenecks for security or PKI teams that are typically dealing with multiple product and/or application developer teams. Manual processes are also prone to human error that could otherwise be avoided by introducing some form of automation. These problems are exacerbated when organizations are using DevOps practices.</p>
+<p>Application teams are used to speed and automation, and for good reason. They adopt tools like BIG-IQ and BIG-IP to help them deliver, secure and monitor business applications. Introducing Venafi allows administrators to get the machine identities they need to secure their applications as quickly as possible. Security teams get the visibility to see ALL the machine identities throughout the organization, and the capability to enforce standard policy over the machine identities that application teams are requesting. Application teams get to use a simple process inside their native tools. It&apos;s a win-win.</p>
+<h3 class="mume-header" id="big-ip-vs-big-iq-which-should-you-choose"><strong>BIG-IP vs. BIG-IQ - Which should you choose?</strong></h3>
+
+<p>At this point, you&apos;re probably wondering which integration makes sense for your organization. Both achieve better control and visibility of machine identities used withn F5 infrastructures, but there are a few differences to be aware of. Perhaps the number one question to ask yourself is &quot;Which team needs to be in control of machine identities for the F5 infrastructre?&quot;</p>
+<p><strong>If the answer to that question is the F5 team</strong>, then the best option is going to be BIG-IQ, because it allows F5 administrators to renew, revoke, and obtain new machine identities directly from the BIG-IQ interface, while still providing the visibility and policy controls to the security or PKI team. F5 administrators can see available Policy folders from Venafi and choose the corresponding container that makes sense for their specific application.</p>
+<p><strong>If the answer is the Security or PKI team</strong>, then the BIG-IP integration is able to provide that control without adding any additional burdens to the F5 admins. Tasks related to the machine identity lifecycle are all initiated automatically from Venafi. This means that Venafi Trust Protection Platform will recognize that a certificate is coming up for expiration. It will reach out to the corresponding Certificate Authority and renew the certificate. And finally, it will push the renewed certificate to the BIG-IP device and associate it with the correct profile...all without human interaction.</p>
+<h3 class="mume-header" id="accessing-the-lab-environment"><strong>Accessing the Lab Environment</strong></h3>
+
+<p>You should have received lab access directly from the CloudShare platform. The lab environment will be valid for two weeks and will automatically be shut down after that time. If you require additional lab time, please reach out to <a href="mailto:paul.cleary@venafi.com">paul.cleary@venafi.com</a>.</p>
+<h2 class="mume-header" id="lab-steps"><strong>Lab Steps</strong></h2>
+
+<h3 class="mume-header" id="section-0-verify-refresh-the-lab-environment">Section 0 - Verify &amp; Refresh the Lab Environment</h3>
+
+<p>The BIG-IQ virtual machine sometimes has issues when resuming from a suspended state. The following steps will ensure all devices and services are working as expected, verify all settings are correct and demonstrate the current configuration of the environment.</p>
+<ol>
+<li>
+<p>Click <strong>View VM</strong> on <em>BIG-IQ.</em></p>
+</li>
+<li>
+<p>Click inside the black window and press <code>Enter</code> on the keyboard to wake up the CLI.</p>
+</li>
+<li>
+<p>Restart BIG-IQ by typing the following command and waiting for services to come back (about 5 minutes):</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">reboot</span> now
+</pre></li>
+<li>
+<p>Click View VM on &#x201C;Venafi TPP Server&#x201D; and log into Windows using the following credentials:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">UN: VENAFIDEMO/Administrator
+PW: Password123<span class="token operator">!</span>
+</pre></li>
+<li>
+<p>Open Chrome and navigate to the &#x201C;VIP &#x2013; <a href="https://192.168.2.10">https://192.168.2.10</a>&quot; bookmark &#x2013; this should present a familiar page, and although the page doesn&#x2019;t display the certificate details, you can validate the certificate using the browser.</p>
+</li>
+<li>
+<p>Next, validate the current BIG-IP configuration by opening the &#x201C;BIG-IP #1&#x201D; bookmark and logging in with the following credentials:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">UN: admin
+PW: VenP@ss
+</pre><blockquote>
+<p><strong>NOTE:</strong> The management certificate for BIG-IP is also being managed by TPP. The management certificate for BIG-IQ will be self-signed.</p>
+</blockquote>
+</li>
+</ol>
+<h3 class="mume-header" id="section-1-automating-machine-identities-with-big-ip">Section 1: Automating Machine Identities with BIG-IP</h3>
+
+<p>An NGINX web server has already been configured in the environment. This section will walk through the configuration of an F5 BIG-IP device providing SSL termination to that application while using a machine identity from Venafi Trust Protection Platform.</p>
+<h4 class="mume-header" id="configure-big-ip">Configure BIG-IP</h4>
+
+<ol>
+<li>
+<p>Login to the Trust Protection Platform server, open a browser and navigate to <a href="http://ecosystemapp:32775">http://ecosystemapp:32775</a> to verify the application is up and running. The Venafi Ecosystem background should be visible.</p>
+</li>
+<li>
+<p>Next, navigate to <a href="https://bigip1.venafidemo.com">https://bigip1.venafidemo.com</a> from within the TPP VM to start the configuration of BIG-IP. Login with the following credentials:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">UN: admin
+PW: VenP@ss
+</pre></li>
+<li>
+<p>Click on <code>Local Traffic &gt; Nodes</code> and then the <code>Create</code> button to create a new Node.</p>
+<p><img src="images/bigip-nodes.png" alt="BIG-IP Nodes"></p>
+</li>
+<li>
+<p>Fill in the node information as follows:</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ecosystemapp&quot;</span>
+<span class="token property">&quot;Address&quot;</span><span class="token operator">:</span> <span class="token number">192.168</span>.<span class="token number">2.101</span>
+</pre><p><img src="images/newnode.png" alt="New Node"></p>
+</li>
+<li>
+<p>Navigate to <code>Local Traffic &gt; Pools</code> and click the <code>Create</code> button to create a new Pool</p>
+</li>
+<li>
+<p>Use the following values to create the new pool:</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ecosystemapp_pool&quot;</span>
+<span class="token property">&quot;Service Port&quot;</span><span class="token operator">:</span> <span class="token number">32775</span>
+</pre><blockquote>
+<p><strong>NOTE:</strong> Make sure to click the <code>Add</code> button after specifying the port:<br>
+<img src="images/port.png" alt="Specify Port"></p>
+</blockquote>
+</li>
+<li>
+<p>Click <code>Finished</code> to create the new pool</p>
+</li>
+<li>
+<p>Navigate to <code>Local Traffic &gt; Virtual Servers</code> and click the <code>Create</code> button to create a new Virtual Server</p>
+</li>
+<li>
+<p>Use the following values to create the virtual server:</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vs_ecosystem&quot;</span>
+<span class="token property">&quot;Source Address&quot;</span><span class="token operator">:</span> <span class="token number">0.0</span>.<span class="token number">0.0</span>/<span class="token number">0</span>
+<span class="token property">&quot;Destination Address&quot;</span><span class="token operator">:</span> <span class="token number">192.168</span>.<span class="token number">2.10</span>
+<span class="token property">&quot;Service Port&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https&quot;</span>
+<span class="token property">&quot;SSL Profile (Client)&quot;</span><span class="token operator">:</span> <span class="token string">&quot;clientssl&quot;</span>
+<span class="token property">&quot;Source Address Translation&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Auto Map&quot;</span>
+<span class="token property">&quot;Default Pool&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ecosystemapp_pool&quot;</span>
+</pre><p><img src="images/general-prop.png" alt="General Properties"><br>
+<img src="images/clientssl.png" alt="Client SSL Profile"><br>
+<img src="images/default-pool.png" alt="Default Pool"></p>
+</li>
+<li>
+<p>At this point, BIG-IP is hosting the ecosystemapp application at the virtual IP <a href="https://192.168.2.10">https://192.168.2.10</a>, but the application is not using a valid certificate yet.</p>
+</li>
+</ol>
+<h4 class="mume-header" id="configure-venafi">Configure Venafi</h4>
+
+<blockquote>
+<p><strong>NOTE:</strong> A BIG-IP Credential Object has already been created in TPP using the BIG-IP credentials from earlier in the lab:<br>
+<img src="images/bigip-credential.png" alt="BIG-IP Credential"></p>
+</blockquote>
+<ol>
+<li>
+<p>Log into Web Admin using the <strong>Venafi TPP</strong> bookmark in the Chrome bookmark toolbar:</p>
+<p><img src="images/tpp-bookmark.png" alt="TPP Bookmark"></p>
+</li>
+<li>
+<p>Navigate to <code>Policy &gt; Certificates &gt; F5 &gt; BIG-IP &gt; bigip1.venafidemo.com</code>. A BIG-IP Device Object has already been created in TPP using the FQDN and specifying the Credential Object created earlier.</p>
+<p><img src="images/bigip-device.png" alt="BIG-IP Device Object"></p>
+<blockquote>
+<p><strong>NOTE:</strong> An F5 Application Object has already been created and is currently managing the BIG-IP device certificate. A new Application Object will be created to manage the machine identity associated with the ecosystemapp application.</p>
+</blockquote>
+</li>
+<li>
+<p>Right-click the <code>bigip1.venafidemo.com</code> Device Object and then click <code>Add &gt; Certificates &gt; Server Certificate</code> and enter the following information:</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token property">&quot;Certificate Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ecosystemapp.venafidemo.com&quot;</span>
+<span class="token property">&quot;Common Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ecosystemapp.venafidemo.com&quot;</span>
+<span class="token property">&quot;Organization&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Venafi&quot;</span>
+<span class="token property">&quot;Organization Unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Ecosystem&quot;</span>
+<span class="token property">&quot;City&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Salt Lake City&quot;</span>
+<span class="token property">&quot;State/Province&quot;</span><span class="token operator">:</span> <span class="token string">&quot;UT&quot;</span>
+<span class="token property">&quot;Country&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;US&quot;</span> 
+</pre><p><img src="images/ecosystem-csr.png" alt="Ecosystem CSR"></p>
+</li>
+<li>
+<p>Click <code>Save</code> at the bottom of the page</p>
+</li>
+<li>
+<p>The Certificate Object has been created, but it hasn&apos;t been issued by the CA yet. Click <code>Renew Now</code> to issue the certificate.</p>
+<p><img src="images/renew.png" alt="Renew Now"></p>
+</li>
+<li>
+<p>Venafi Trust Protection Platform will submit the CSR to the configured Certificate Authority and retrieve it when it becomes available. This process can be seen by clicking on the <code>Refresh</code> icon in the top-right corner. Keep clicking on <code>Refresh</code> until the <strong>Certificate Status</strong> says <code>OK</code>.</p>
+<p><img src="images/cert-status.png" alt="Certificate Status"></p>
+</li>
+<li>
+<p>Right-click the <code>bigip1.venafidemo.com</code> Device Object and then click <code>Add &gt; Application &gt; F5 LTM Advanced</code> and configure the Application Object with the following information:</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token property">&quot;Processing Disabled&quot;</span><span class="token operator">:</span> &#x25A1;
+<span class="token property">&quot;Associated Certificate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ecosystemapp.venafidemo.com&quot;</span>
+<span class="token property">&quot;Application Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ecosystemapp&quot;</span>
+<span class="token property">&quot;Force Profile Update&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Yes&quot;</span>
+<span class="token property">&quot;Bundle Certificate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Yes&quot;</span>
+<span class="token property">&quot;Overwrite Certificate and Key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Yes&quot;</span>
+<span class="token property">&quot;SSL Profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;client_tpp&quot;</span>
+<span class="token property">&quot;Parent SSL Profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;clientssl&quot;</span>
+<span class="token property">&quot;Virtual Server&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vs_ecosystem&quot;</span>
+<span class="token property">&quot;Virtual Server Partition&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Common&quot;</span>
+</pre><p><img src="images/bigip-cert1.png" alt="BIG-IP Cert1"><br>
+<img src="images/bigip-cert2.png" alt="BIG-IP Cert2"></p>
+<blockquote>
+<p><strong>NOTE:</strong> This example will create a new <code>client_tpp</code> SSL Profile if it doesn&apos;t already exist, using the <strong>Parent SSL Profile</strong> information.</p>
+</blockquote>
+</li>
+<li>
+<p>Click <code>Save</code> at the bottom of the page.</p>
+</li>
+<li>
+<p>Click <code>Push</code> to automatically provision the associated certificate to BIG-IP, create the new &quot;client_tpp&quot; SSL Profile and assign it to the &quot;vs_ecosystem&quot; Virtual Server. This process can be seen by clicking on the <code>Refresh</code> icon in the top-right corner. Keep clicking on <code>Refresh</code> until the <strong>Certificate Status</strong> says <code>OK</code>.</p>
+<p><img src="images/bigip-push.png" alt="BIG-IP Push"></p>
+</li>
+<li>
+<p>Verify the certificate is in use by the virtual server by navigating to the Virtual Server IP address at <a href="https://192.168.2.10">https://192.168.2.10</a> or clicking the <code>Ecosystem App - VIP</code> bookmark in the Chrome bookmark bar.</p>
+</li>
+</ol>
+<h3 class="mume-header" id="section-2-transitioning-from-big-ip-to-big-iq">Section 2: Transitioning from BIG-IP to BIG-IQ</h3>
+
+<p>The steps in this section will bring the BIG-IP server under the management of BIG-IQ. All future lifecycle operations involving the machine identity will be initiated from BIG-IQ. The BIG-IQ virtual machine sometimes has issues when resuming from a suspended state. If the VM wasn&apos;t reset in the previous section, or if the environment has suspended and resumed since then, the following steps will ensure all devices and services are working as expected.</p>
+<ol>
+<li>
+<p>Click <strong>View VM</strong> on <em>BIG-IQ.</em></p>
+</li>
+<li>
+<p>Click inside the black window and press <code>Enter</code> on the keyboard to wake up the CLI.</p>
+</li>
+<li>
+<p>Restart BIG-IQ by typing the following command and waiting for services to come back (about 5 minutes):</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">reboot</span> now
+</pre><blockquote>
+<p><strong>NOTE:</strong> You should see the BIG-IQ Login Screen when the device has finished starting up:<br>
+<img src="images/bigiq-login.png" alt="BIG-IQ Login"></p>
+</blockquote>
+</li>
+</ol>
+<h4 class="mume-header" id="configure-big-iq"><strong>Configure BIG-IQ</strong></h4>
+
+<ol>
+<li>
+<p>Navigate to the &#x201C;BIG-IQ&#x201D; bookmark and login with the following credentials:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">UN: admin
+PW: VenP@ss123<span class="token operator">!</span>
+</pre></li>
+<li>
+<p>Click on the <strong>Devices</strong> tab and then click <strong>Add Device</strong> and enter the following information, then click <strong>Add</strong>.</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token property">&quot;IP Address&quot;</span><span class="token operator">:</span> <span class="token number">192.168</span>.<span class="token number">1.201</span>
+<span class="token property">&quot;Port&quot;</span><span class="token operator">:</span> <span class="token number">443</span>
+<span class="token property">&quot;User Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;admin&quot;</span>
+<span class="token property">&quot;Password&quot;</span><span class="token operator">:</span> <span class="token string">&quot;VenP@ss&quot;</span>
+</pre><p><img src="images/add-bigip.png" alt="Add BIG-IP"></p>
+</li>
+<li>
+<p>Leave the default &#x201C;Local Traffic (LTM)&#x201D; selected and click Continue. When complete, <a href="http://bigip1.venafidemo.com">bigip1.venafidemo.com</a> should be listed in the device list.</p>
+<p><img src="images/bigip1.png" alt="BIG-IP1.venafidemo.com"></p>
+</li>
+<li>
+<p>Click on <strong>Complete Import</strong> Tasks in the &#x201C;Services&#x201D; column and then the <strong>Import</strong> button to import the current configuration of the BIG-IP device added in the previous step.</p>
+</li>
+<li>
+<p>Click the <strong>Configuration</strong> tab, then <code>Local Traffic &gt; Certificate Management &gt; Certificates &amp; Keys</code>. The certificate created in Section 1, &quot;<a href="http://ecosystemapp.venafidemo.com">ecosystemapp.venafidemo.com</a>&quot; is present and listed as &quot;Unmanaged.&quot;</p>
+<p><img src="images/bigip-imported.png" alt="BIG-IP Imported"></p>
+</li>
+<li>
+<p>Next, click <strong>Third Party CA Management</strong>, then <strong>Create</strong> to configure TPP as a CA provider using the following values, and then click <strong>Test Connection</strong> to validate.</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token property">&quot;CA Providers&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Venafi&quot;</span>
+<span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;TPP&quot;</span>
+<span class="token property">&quot;WebSDK Endpoint&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://tpp.venafidemo.com/vedsdk&quot;</span>
+<span class="token property">&quot;User Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;tppadmin&quot;</span>
+<span class="token property">&quot;Password&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Password123!&quot;</span>
+<span class="token property">&quot;Key Passphrase&quot;</span><span class="token operator">:</span> <span class="token string">&quot;VenafiPassword123!&quot;</span>
+</pre><p><img src="images/thirdparty-provider.png" alt="BIG-IP LTM"></p>
+<blockquote>
+<p><strong>NOTE:</strong> In order for the above step to complete successfully, the Venafi Operational Certificate must be publicly trusted, OR the root certificate of the internal CA must be added to the Java trust store on BIG-IQ.</p>
+</blockquote>
+</li>
+<li>
+<p>Before continuing with the BIG-IQ configuration, users will want to configure TPP with a logical BIG-IQ policy folder structure. Navigate back to Web Admin and create the following two new Policy folders under the existing BIG-IQ folder. These newly created folders will be used in steps later in the lab. For this example, the <code>Ecosystem App</code> folder will be used for our existing application. The <code>Internal App</code> folder will be used to demonstrate additional policy options that can be enforced by Venafi Trust Protection Platform.</p>
+</li>
+<li>
+<p>Right-click the <code>BIG-IQ</code> folder, select <code>Add &gt; Policy</code>, name it <strong>&quot;Ecosystem App,&quot;</strong> and configure the policy with the following settings:</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token property">&quot;Organization&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Venafi&quot;</span>
+<span class="token property">&quot;Organization Unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Ecosystem&quot;</span>
+<span class="token property">&quot;City&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Salt Lake City&quot;</span>
+<span class="token property">&quot;State/Province&quot;</span><span class="token operator">:</span> <span class="token string">&quot;UT&quot;</span>
+<span class="token property">&quot;Country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;US&quot;</span>
+</pre><p><img src="images/ecosystem-policy.png" alt="Ecosystem Policy"></p>
+</li>
+<li>
+<p>Right-click the <code>BIG-IQ</code> folder, select <code>Add &gt; Policy</code>, name it <strong>&quot;Internal App,&quot;</strong> and configure the policy with the following settings:</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token property">&quot;Organization&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Venafi&quot;</span>
+<span class="token property">&quot;Organization Unit&quot;</span><span class="token operator">:</span> 
+<span class="token property">&quot;City&quot;</span><span class="token operator">:</span> 
+<span class="token property">&quot;State/Province&quot;</span><span class="token operator">:</span>
+<span class="token property">&quot;Country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;US&quot;</span>
+</pre><p><img src="images/internal-policy.png" alt="Internal Policy"></p>
+</li>
+<li>
+<p>Since BIG-IP will be handling the provisioning process, the Management Type of the BIG-IQ parent folder needs to be set to Enrollment, and child folders should be set to inherit this policy value.</p>
+</li>
+<li>
+<p>Next, navigate back to the BIG-IQ interface and complete the configuration of the Third-Party CA Management Provider, TPP, created earlier. From the Third-Party CA Management page, click <strong>Edit Policy</strong>.</p>
+</li>
+<li>
+<p>Enter <code>\VED\Policy\Certificates\BIG-IQ\</code> to specify the top-level folder that should be connected to BIG-IQ and then click <strong>Get</strong>.</p>
+<p><em><strong>INSERT SCREENSHOT</strong></em></p>
+<blockquote>
+<p><strong>NOTE:</strong> The two policy folders created earlier should populate under the Policy Folder List</p>
+</blockquote>
+</li>
+</ol>
+<h4 class="mume-header" id="migrate-application"><strong>Migrate Application</strong></h4>
+
+<p>This use case outlines the steps necessary to introduce BIG-IQ to an existing environment which includes F5 BIG-IP Application Objects. This scenario will likely be the most common seen at existing mutual customers of Venafi &amp; F5 with brownfield deployments.</p>
+<p>This process will see the certificate <em><strong>apache.venafidemo.com-22Sep20-000F</strong></em> go from &#x201C;Unmanaged&#x201D; to &#x201C;Managed.&#x201D;</p>
+<ol>
+<li>
+<p>Navigate to <code>Configuration &gt; Local Traffic &gt; Certificates &amp; Keys</code> and click <strong>Import</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Import from CA Providers</strong> in the <strong>Import Type</strong> dropdown menu, enter a password that will be used to protect the private key</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">Password123<span class="token operator">!</span>
+</pre></li>
+<li>
+<p>Click <strong>Import</strong>. This will import any certificates from TPP that have already been associated with an F5 application object. This process changes the certificate to &#x201C;Managed&#x201D; in the BIG-IQ interface.</p>
+</li>
+<li>
+<p>Next, we must update the SSL Profile with the new password for the private key. Navigate to <code>Configuration &gt; Local Traffic &gt; Profiles</code> and click on the <strong>clientssl_tpp</strong> profile to edit it.</p>
+</li>
+<li>
+<p>Ignore the warning at the top saying &#x201C;One or more supported fields are missing&#x2026;&#x201D;</p>
+</li>
+<li>
+<p>Scroll down the page and enter the private key password (<code>Password123!</code>) used in Step 2 of this exercise and then click <strong>Save &amp; Close</strong></p>
+<p><em><strong>INSERT SCREENSHOT</strong></em></p>
+</li>
+<li>
+<p>Finally, the changes must be pushed down to the BIG-IP device &#x2013; this is done using a &#x201C;Deployment&#x201D; from the BIG-IQ interface. Navigate to <code>Configuration &gt; Local Traffic &gt; Virtual Servers</code></p>
+</li>
+<li>
+<p>Select the &#x201C;vs_apache&#x201D; Virtual Server and click <strong>Deploy</strong></p>
+<p><em><strong>INSERT SCREENSHOT</strong></em></p>
+</li>
+<li>
+<p>Give the deployment job a descriptive name, like &#x201C;Apache-VS-Deployment&#x201D;</p>
+<p><em><strong>INSERT SCREENSHOT</strong></em></p>
+</li>
+<li>
+<p>Scroll down and ensure &#x201C;vs_apache&#x201D; is selected as the Source Object:</p>
+<p><em><strong>INSERT SCREENSHOT</strong></em></p>
+</li>
+<li>
+<p>Next, click <strong>Find Relevant Devices</strong>, in the bottom-left corner, to search for any BIG-IP devices that this can be deployed to &#x2013; <a href="http://bigip1.venafidemo.com">bigip1.venafidemo.com</a> should be the only device listed. Select it and then click the arrow to move it into the &#x201C;Selected&#x201D; column.</p>
+</li>
+<li>
+<p>When the target device has been selected, the Create button will become available. Click <strong>Create</strong> to create an &#x201C;Evaluation.&#x201D; Once the evaluation has been created, users are able to click View in the &#x201C;Differences&#x201D; column to see exactly what will change when the new deployment is pushed down to the BIG-IP device.</p>
+</li>
+<li>
+<p>Finally, scroll to the bottom and click <strong>Deploy Now</strong>.</p>
+</li>
+</ol>
+<h3 class="mume-header" id="section-3-deploying-a-new-application-using-big-iq-venafi">Section 3: Deploying a new application using BIG-IQ &amp; Venafi</h3>
+
+<p>This use case outlines the steps necessary to request a new certificate from BIG-IQ. This is likely the most common scenario customers will implement in new deployments, as it ensures BIG-IQ is authoritative over the certificate lifecycle and all provisioning tasks originate from BIG-IQ, rather than Trust Protection Platform.</p>
+<ol>
+<li>
+<p>From the BIG-IQ management interface, click the <strong>Configuration</strong> tab and then navigate to <code>Local Traffic &gt; Certificate Management &gt; Certificates &amp; Keys</code></p>
+</li>
+<li>
+<p>Click <strong>Create</strong> and fill in the details for the new certificate:</p>
+<p><em><strong>INSERT SCREENSHOT</strong></em></p>
+</li>
+<li>
+<p>Click <strong>Save &amp; Close</strong> to begin the process. The page that follows should show a new &#x201C;Managed&#x201D; certificate and values will continue to populate as that certificate goes through the lifecycle. When processing is complete, the status should turn to green:</p>
+<p><em><strong>INSERT SCREENSHOT</strong></em></p>
+</li>
+<li>
+<p>Finally, navigate back to TPP and verify that the certificate object has been created and it is located in the proper folder, and with the correct settings.</p>
+<p><em><strong>INSERT SCREENSHOT</strong></em></p>
+</li>
+<li>
+<p>At this point, users should be ready to associate the newly created certificate with a new SSL Profile using BIG-IQ.</p>
+</li>
+<li>
+<p>Click <code>Local Traffic &gt; Profiles</code> and then click the <strong>Create</strong> button.</p>
+</li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
