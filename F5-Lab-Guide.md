@@ -21,7 +21,7 @@ ___
 | BIG-IQ | 192.168.1.200 | bigiq.venafidemo.com | root | VenP@ss123! | admin | VenP@ss123!
 | BIG-IP | 192.168.1.201 | bigip1.venafidemo.com | root | VenP@ss | admin | VenP@ss
 | TPP Server | 192.168.1.100 | tpp.venafidemo.com | N/A | N/A | VENAFIDEMO\venafi_svc | 5&Njgx8IGyHQ
-| Venafi Platform | 192.168.1.100 | tpp.venafidemo.com | N/A | N/A |  tppadmin | Passw0rd123! |
+| Venafi Platform | 192.168.1.100 | tpp.venafidemo.com | N/A | N/A |  tppadmin | Password123! |
 ___
 
 ## **About This Lab**
